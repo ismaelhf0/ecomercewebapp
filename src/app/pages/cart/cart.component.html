@@ -2,6 +2,11 @@
 
 <mat-card *ngIf="cart.items.length" class="max-w-7xl mx-auto mt-20">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-full">
+   
+<!-- duplicate cart container for price trash and some other functionalities -->
+
+      <!-- product -->
+
     <ng-container matColumnDef="product">
       <th mat-header-cell *matHeaderCellDef>Product</th>
       <td mat-cell *matCellDef="let element">
@@ -11,18 +16,99 @@
         <button mat-raised-button routerLink="/home">Continue Shopping</button>
       </td>
     </ng-container>
+   <!-- name component -->
+
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>name</th>
       <td mat-cell *matCellDef="let element">
-        <p class="truncate max-w-xs">{{ element.name }}</p>
+       <span class="truncate max-w-xs block"> {{element.name}}</span>
+      </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+   
+      <!-- price-->
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>price</th>
+      <td mat-cell *matCellDef="let element">
+        {{element.price | currency}}
+      </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+   
+   
+   
+   
+   
+   
+   
+   <!-- quantity -->
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="flex row-auto justify-center">
+          <button mat-icon-button > <mat-icon>remove</mat-icon> </button>
+          
+          <span class="pt-[2vh]">{{ element.quantity }}</span>
+          <button mat-icon-button > <mat-icon>add</mat-icon> </button>
+          
+      </div>
       </td>
       <td mat-footer-cell *matFooterCellDef></td>
     </ng-container>
     
    
    
-    
+       <!-- total -->
 
+       <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let element">
+          {{( element.quantity * element.price )|currency }}
+        </td>
+        <td mat-footer-cell *matFooterCellDef> 
+          <span class="font-bold py-5 block" >
+            {{getTotal(cart.items)|currency}}
+          </span>
+        </td>
+      </ng-container>
+
+             <!-- action -->
+
+             <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>
+                <button mat-raised-button color="warn" class="float-right">
+                  clear All
+                </button>
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-mini-fab color="warn" class="float-right" >
+                  <mat-icon>close</mat-icon>
+                </button>
+              </td>
+              <td mat-footer-cell *matFooterCellDef> 
+                <button mat-raised-button  color="accent" class="inline-block">checkout</button>
+                
+                <!-- <span class="font-bold py-5 block" >
+                  {{getTotal(cart.items)|currency}}
+                </span>-->
+              </td>
+            </ng-container>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>

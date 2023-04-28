@@ -30,6 +30,8 @@ import { FiltersComponent } from './pages/home/component/filters/filters.compone
 import { ProductBoxComponent } from './pages/home/component/product-box/product-box.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { StoreService } from './services/store.service';
+import {  HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -41,8 +43,13 @@ import { CartService } from './services/cart.service';
     FiltersComponent,
     ProductBoxComponent,
     CartComponent
+
   ],
+
+
   imports: [
+    HttpClientModule,
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -61,7 +68,7 @@ import { CartService } from './services/cart.service';
     MatBadgeModule,
     MatSnackBarModule
   ],
-  providers: [CartService],
+  providers: [CartService,StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

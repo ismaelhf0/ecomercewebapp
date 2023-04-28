@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class NavbarComponent implements OnInit {
   private _cart: Cart = { items:[] };
-  itemesQuantity= 0;
+  itemsQuantity= 0;
   CartService: any;
  
   @Input()
@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
   set cart(cart:Cart){
     this._cart = cart;
-this.itemesQuantity = cart.items
+this.itemsQuantity = cart.items
 .map((item) => item.quantity)
 .reduce((prev, current) => prev + current , 0);
 

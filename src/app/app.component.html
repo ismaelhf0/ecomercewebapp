@@ -16,6 +16,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<app-navbar [cart]="cart"></app-navbar>
 
-<router-outlet></router-outlet>
+
+<app-navbar class="fixed w-full top-0 z-50" [cart]="cart"></app-navbar>
+<div style="position: absolute;
+   width:100%; ;">
+    <router-outlet></router-outlet>
+</div>

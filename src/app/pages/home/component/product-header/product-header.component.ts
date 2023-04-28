@@ -35,6 +35,10 @@ export class ProductHeaderComponent {
     this.sort = newSort;
   }
 }
+
+
+
+
 /*The ProductsHeaderComponent is an Angular component that has three output properties: columnsCountChange,
  itemsCountChange, and sortChange. These output properties allow the component
   to emit events when their values change, which can be used to communicate with 

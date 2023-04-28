@@ -31,11 +31,30 @@ displayedColumns: Array<string> = [
 constructor(private CartService: CartService) {}
 ngOnInit(): void {
   this.dataSource = this.cart.items;
+  this.CartService.cart.subscribe((_cart: Cart) => {
+this.cart = _cart;
+this.dataSource = this.cart.items;
+  } );
 }
 getTotal(items: Array<CartItems>): number {
 return this.CartService.getTotal(items)
 
 }
+onClearCart():void{
+  this.CartService.clearCart();
 
+}
+OnRemoveFromCart(item: CartItems):void {
+  this.CartService.removeFromCart(item)
+
+}
+OnAddQuantity(item: CartItems): void {
+  this.CartService.addToCart(item);
+
+}
+onRemoveAddQuantity(item: CartItems): void {
+  this.CartService.RemoveAddQuantity(item);
+
+}
 
 }

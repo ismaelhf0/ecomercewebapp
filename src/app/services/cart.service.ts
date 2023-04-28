@@ -38,10 +38,32 @@ const items = [...this.cart.value.items]
     this._snackBar.open('cart is cleared', 'ok',{
       duration: 3000
     });
-
+    
    }
-   
+   removeFromCart(_item: CartItems):void{
+      const filteredItems = this.cart.value.items.filter(
+        (item) => item.id !== item.id 
 
+        )
+        this.cart.next({items: filteredItems});
+        this._snackBar.open('1 item removed from cart',' ok   ' ,{
+          duration: 3000
+        });
+   }
+   RemoveAddQuantity(item: CartItems): void{
+let itemFromRemoval: CartItems | undefined;
+    this.cart.value.items.map((_item) => {
+      if(item.id === item.id){
+        _item.quantity--;
+        if(_item.quantity === 0){
+          itemFromRemoval = _item;
+        }
+  
+      }
+    } 
+    );
+  
+  }
 
 
 }

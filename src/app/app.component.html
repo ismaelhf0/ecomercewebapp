@@ -14,12 +14,20 @@
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
 <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!--     <div class="flex-items"></div>
+-->
+
+    
 
 
-<app-navbar class="fixed w-full top-0 z-50" [cart]="cart"></app-navbar>
-<div style="position: absolute;
-   width:100%; ;">
-    <router-outlet></router-outlet>
-</div>
+
+
+    <app-navbar class=" fixed w-full top-0 z-50" [cart]="cart"></app-navbar>
+    
+    <div class="" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet class="" #o="outlet"></router-outlet>
+      </div>
+ 
+
+
+ <app-footer class="relative"></app-footer>

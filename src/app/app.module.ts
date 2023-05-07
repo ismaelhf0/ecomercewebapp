@@ -32,6 +32,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import {  HttpClientModule } from '@angular/common/http';
+import { AtractionPageComponent } from './pages/atraction-page/atraction-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -42,7 +44,11 @@ import {  HttpClientModule } from '@angular/common/http';
     ProductHeaderComponent,
     FiltersComponent,
     ProductBoxComponent,
-    CartComponent
+    CartComponent,
+    AtractionPageComponent,
+    FooterComponent
+    
+    
 
   ],
 

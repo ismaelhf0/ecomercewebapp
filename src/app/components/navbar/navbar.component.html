@@ -1,8 +1,8 @@
 
-<mat-toolbar class=" max-w-8xl mx-auto border-x justify-between  ">
+<mat-toolbar class=" 2xs:flex-wrap 2xs:justify-center xs:flex-wrap md:flex-wrap w-8xl h-auto mx-auto border ">
     <div class="flex px-5">
         <mat-icon class="pt-1.5 mx-4">menu</mat-icon>
-        <a routerLink="home">  <svg width="186" height="47" viewBox="0 0 186 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a routerLink="">  <svg width="186" height="47" viewBox="0 0 186 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 37.1053L1.20486 9.00421H4.11984L14.8858 33.4244L25.6907 9.00421H28.6057L29.6162 37.1053H26.8178L25.9628 14.8619L16.0518 37.1053H13.5255L3.77004 14.9411L2.79838 37.1053H0Z" fill="#434344"/>
             <path d="M56.2421 11.6164H43.2219V21.5112H55.8923V24.1234H43.2219V34.4931H56.7862L56.553 37.1053H40.268V9.00421H56.2421V11.6164Z" fill="#434344"/>
             <path d="M65.8029 37.1053V9.00421H72.7989C83.4742 9.00421 88.8119 13.6349 88.8119 22.8964C88.8119 25.8516 88.2159 28.3979 87.024 30.5352C85.8321 32.646 84.122 34.2688 81.8936 35.4034C79.6653 36.538 76.9965 37.1053 73.8872 37.1053H65.8029ZM68.7957 34.4139H73.7317C77.6961 34.4139 80.6888 33.4508 82.7098 31.5246C84.7568 29.5985 85.7803 26.7884 85.7803 23.0943C85.7803 19.2684 84.7438 16.4187 82.671 14.5453C80.624 12.6455 77.4888 11.6956 73.2653 11.6956H68.7957V34.4139Z" fill="#434344"/>
@@ -21,13 +21,13 @@
 
 
 <form>   
-    <label for="default-search" class="   text-sm font-medium text-gray-900 sr-only dark:text-white ">Search</label>
-    <div class="relative min-w-[500px] max-w-[600px]">
+    <label for="default-search" class="text-sm font-medium text-gray-900 sr-only dark:text-rose-400">Search</label>
+    <div class="relative lg:min-w-[500px] lg:max-w-[600px] md:min-w-[300px] md:max-w-[300px]">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
-        <input type="search" id="default-search" class=" focus:outline-none  block w-full p-4 pl-10 text-sm text-gray-900  border-stone-300 rounded-lg bg-gray-50 dark:bg-gray-100  dark:placeholder-gray-400 border-2 " placeholder="Search Mockups, Logos..." required>
-        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-rose-800  focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-500 dark:hover:bg-rose-600 dark:focus:ring-rose-200">Search</button>
+        <input type="search" id="default-search" class=" focus:outline-none  block w-full min-w-[300px] p-4 pl-10 text-sm text-gray-900  border-stone-300 rounded-lg bg-gray-50 dark:bg-gray-100  dark:placeholder-gray-400 border-2 " placeholder="Search Mockups, Logos..." required>
+        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-sideral-gray hover:bg-bg-sideral-gray-500  focus:outline-none font-medium rounded-lg text-sm px-4 py-2  ">Search</button>
     </div>
 </form>
 
@@ -60,15 +60,17 @@
 
 
 
-<div class="leftToolkit flex row-auto justify-between " >
-<a mat-icon-button href="https://www.linkedin.com/in/ismael-hajfani-831740188/" target="_blank" class="pt-3">
-    <span class="eicon-security"></span>
-</a>
+<span class="justify-between  md:pl-0 2xs:pl-52 xs:pl-52 2sm:pl-2 1sm:pl-[50vh] sm:pl-[50vh] "  >
+
+    <mat-icon class="pt-0 mx-4 w-0 h-0">account_circle</mat-icon>
 
     <button mat-icon-button [mat-menu-trigger-for]="menu">
 
         <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="warn">
-            shopping_cart
+                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.875 17.875H11.375M34.125 17.875H17.875M16.25 22.75H22.75M29.25 14.625L24.375 4.875M9.75 14.625L14.625 4.875" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.526 26.4176C31.7346 30.1112 31.3397 31.9573 29.9991 33.0411C28.6585 34.125 26.7702 34.125 22.9937 34.125H16.0062C12.2297 34.125 10.3415 34.125 9.00248 33.0411C7.66023 31.9573 7.26373 30.1112 6.47398 26.4176L5.77686 23.1676C4.61011 17.719 4.02511 14.9939 5.48923 13.1853C6.95173 11.375 9.73861 11.375 15.3107 11.375H23.6892C29.263 11.375 32.0466 11.375 33.5107 13.1853C34.5995 14.534 34.5556 16.3897 33.9787 19.5" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
         </mat-icon> 
         
     </button>
@@ -115,27 +117,27 @@
             
         </div>
     </mat-menu>
-</div>
+</span>
+
+</mat-toolbar>
 
 
-    </mat-toolbar>
-
-    <mat-toolbar class=" max-w-8xl max-h-[48px] drop-shadow-xl  bg-sideral-gray mx-auto border-x  ">
+    <mat-toolbar class=" max-w-8xl max-h-auto drop-shadow-xl  bg-sideral-gray mx-auto border-x  ">
 <div class="m-auto" >
-        <div class="text-stone-100 font-normal ">
-            <ul class=" flex flex-wrap items-center justify-center ">
+        <div class="text-stone-100 font-normal  ">
+            <ul class=" 2sm:text-xs 1sm:text-sm md:text-xl flex flex-wrap items-center justify-center ">
                 <li class="nav-item">
-                    <a routerLink="home" class="nav-link mr-4
+                    <a routerLink="home" class="nav-link  mr-4
                     ">Boutique</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" routerLink="cart">Exclusivités Mediazone</a>
+                    <a class="nav-link  mr-4" routerLink="cart"> services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="/apple/">Promotions</a>
+                    <a class="nav-link  mr-4" href="/apple/">Promotions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="/apple/">Service après vente</a>
+                    <a class="nav-link  mr-4" href="/apple/">Service après vente</a>
                 </li>
                 <li class="nav-item">
                     <a href="tel:+212661448549" class="nav-link custom">Assistance</a>
@@ -151,7 +153,7 @@
     
     
     
-    
+
     
     
     
